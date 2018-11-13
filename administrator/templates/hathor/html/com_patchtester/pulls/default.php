@@ -2,7 +2,7 @@
 /**
  * Patch testing component for the Joomla! CMS
  *
- * @copyright  Copyright (C) 2011 - 2012 Ian MacLennan, Copyright (C) 2013 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2011 - 2012 Ian MacLennan, Copyright (C) 2013 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later
  */
 
@@ -74,43 +74,37 @@ echo \JHtml::_(
 
 		<table class="adminlist">
 			<thead>
-			<tr>
-				<th width="5%" class="nowrap center">
-					<?php echo \JHtml::_('grid.sort', 'COM_PATCHTESTER_PULL_ID', 'a.pull_id', $listDirn, $listOrder); ?>
-				</th>
-				<th class="nowrap">
-					<?php echo \JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
-				</th>
-				<th width="8%" class="nowrap center">
-					<?php echo \JText::_('COM_PATCHTESTER_BRANCH'); ?>
-				</th>
-				<th width="8%" class="nowrap center">
-					<?php echo \JText::_('COM_PATCHTESTER_READY_TO_COMMIT'); ?>
-				</th>
-				<th width="8%" class="nowrap center">
-					<?php echo \JText::_('COM_PATCHTESTER_GITHUB'); ?>
-				</th>
-				<?php if ($this->trackerAlias !== false) : ?>
-				<th width="8%" class="nowrap center">
-					<?php echo \JText::_('COM_PATCHTESTER_JISSUES'); ?>
-				</th>
-				<?php endif; ?>
-				<th width="10%" class="nowrap center">
-					<?php echo \JHtml::_('grid.sort', 'JSTATUS', 'applied', $listDirn, $listOrder); ?>
-				</th>
-				<th width="15%" class="nowrap center">
-					<?php echo \JText::_('COM_PATCHTESTER_TEST_THIS_PATCH'); ?>
-				</th>
-			</tr>
-			</thead>
-			<tfoot>
 				<tr>
-					<td colspan="<?php echo $colSpan; ?>">
-					</td>
+					<th width="5%" class="nowrap center">
+						<?php echo \JHtml::_('grid.sort', 'COM_PATCHTESTER_PULL_ID', 'a.pull_id', $listDirn, $listOrder); ?>
+					</th>
+					<th class="nowrap">
+						<?php echo \JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
+					</th>
+					<th width="8%" class="nowrap center">
+						<?php echo \JText::_('COM_PATCHTESTER_BRANCH'); ?>
+					</th>
+					<th width="8%" class="nowrap center">
+						<?php echo \JText::_('COM_PATCHTESTER_READY_TO_COMMIT'); ?>
+					</th>
+					<th width="8%" class="nowrap center">
+						<?php echo \JText::_('COM_PATCHTESTER_GITHUB'); ?>
+					</th>
+					<?php if ($this->trackerAlias !== false) : ?>
+					<th width="8%" class="nowrap center">
+						<?php echo \JText::_('COM_PATCHTESTER_JISSUES'); ?>
+					</th>
+					<?php endif; ?>
+					<th width="10%" class="nowrap center">
+						<?php echo \JHtml::_('grid.sort', 'JSTATUS', 'applied', $listDirn, $listOrder); ?>
+					</th>
+					<th width="15%" class="nowrap center">
+						<?php echo \JText::_('COM_PATCHTESTER_TEST_THIS_PATCH'); ?>
+					</th>
 				</tr>
-			</tfoot>
+			</thead>
 			<tbody>
-			<?php echo $this->loadTemplate('items'); ?>
+				<?php echo $this->loadTemplate('items'); ?>
 			</tbody>
 		</table>
 		<?php echo $this->pagination->getListFooter(); ?>

@@ -16,3 +16,4 @@ tar zcf ../packages/com_patchtester.tar.gz .
 zip -r ../packages/com_patchtester.zip .
 cd ../../
 composer install
+php build/patchtester/hash_generator.php

@@ -2,7 +2,7 @@
 /**
  * Patch testing component for the Joomla! CMS
  *
- * @copyright  Copyright (C) 2011 - 2012 Ian MacLennan, Copyright (C) 2013 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2011 - 2012 Ian MacLennan, Copyright (C) 2013 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later
  */
 
@@ -78,6 +78,7 @@ class GitHub
 			{
 				$username = $this->options->get('api.username');
 				$username = str_replace('@', '%40', $username);
+				$username = str_replace('#', '%23', $username);
 				$uri->setUser($username);
 			}
 
@@ -85,6 +86,7 @@ class GitHub
 			{
 				$password = $this->options->get('api.password');
 				$password = str_replace('@', '%40', $password);
+				$password = str_replace('#', '%23', $password);
 				$uri->setPass($password);
 			}
 		}
